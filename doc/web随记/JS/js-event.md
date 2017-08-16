@@ -72,6 +72,9 @@
 	element.addEventListener('click', fun, false);
 	element.removeEventListener('click', fun, false);
 
+> add: addEventListener是用来注册事件的，通常第二个参数我们传入的是一个回调函数;但是也可以传一个object，只需要这个object具有handleEvent属性即可。
+- [addEventListener与handleEvent关系](https://leohxj.gitbooks.io/front-end-database/problems-in-develop-webapp/addEventListener-and-handleEvent.html)
+
 ##事件触发过程
 
 事件绑定后，那事件发生时是如何确认发生对象和触发的呢，过程详看[w3c UI Events](https://www.w3.org/TR/DOM-Level-3-Events/#event-flow)
