@@ -17,7 +17,7 @@
 *2017-08-31*
 > blog方式受到[一波不是一波](https://github.com/riskers/blog)启发，对blog notes 进行改造
 
-- 统一将blog中的md文件放入 issue中，doc中也会放入一份，方便你的下载分享:unamused:
+- 统一将blog中的md文件放入 [issue](https://github.com/NARUTOne/blog-note/issues)中，doc中也会放入一份，方便你的下载分享:unamused:
 
 *2017-08-06*
 - 将本地blog 记录的md文件 搬迁到github上进行保存
