@@ -35,7 +35,7 @@
 > 2016年毕业的前端小白，迷路的缘，火舞的叶 follow your heart！
 > 网名昵称：NARUTOne (你懂吗:grin:) 、 迷（の）缘火（の）叶
 
-Email: wznarutone326@gmail.com@gmail.com
+Email: wznarutone326@gmail.com
 
 **爱好**
 
