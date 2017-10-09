@@ -22,6 +22,10 @@
 *2017-08-06*
 - 将本地blog 记录的md文件 搬迁到github上进行保存
 
+## 关于博客网站
+>参考：https://github.com/eyasliu/blog/issues/2
+
+后续有计划需要搭建个线上博客，时间待定哈:smile:
 ## 关于订阅
 
 喜欢请点右上角 `star`，但是 `star` 并不是订阅博客。
@@ -35,7 +39,7 @@
 > 2016年毕业的前端小白，迷路的缘，火舞的叶 follow your heart！
 > 网名昵称：NARUTOne (你懂吗:grin:) 、 迷（の）缘火（の）叶
 
-Email: wznarutone326@gmail.com@gmail.com
+Email: wznarutone326@gmail.com
 
 **爱好**
 
