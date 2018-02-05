@@ -265,3 +265,26 @@ start()
 ```
 
 如果同时使用 defer 和 async ，async 会覆盖掉 defer 。
+
+### event loop 补充
+
+一道面试题引发的“大事件”
+
+```js
+(function test() {
+    setTimeout(function() {console.log(4)}, 0);
+    new Promise(function executor(resolve) {
+        console.log(1);
+        for( var i=0 ; i<10000 ; i++ ) {
+            i == 9999 && resolve();
+        }
+        console.log(2);
+    }).then(function() {
+        console.log(5);
+    });
+    console.log(3);
+})()
+// 12354
+```
+
+>参考：https://github.com/creeperyang/blog/issues/21
