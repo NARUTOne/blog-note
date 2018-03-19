@@ -2,7 +2,6 @@
 
 > Some blog documents with writing :smile:
 
-
 ## address 
 
 - **简书BLOG** : [NARUTOne の BLOG](http://www.jianshu.com/u/3bf902a64a29)
