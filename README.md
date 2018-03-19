@@ -43,7 +43,7 @@ Email: wznarutone326@gmail.com
 **爱好**
 
 - 历史：可以从古侃到今，从外聊到内
-- LOL：常年混迹于铂金分段，工作后不怎么打了
+- LOL：常年爬坑，工作后不怎么打了
 - 动漫：日漫国漫美漫...那些儿年看过得动漫:unamused:
 
 [更多信息...](https://github.com/NARUTOne/blog-note/issues/1)
