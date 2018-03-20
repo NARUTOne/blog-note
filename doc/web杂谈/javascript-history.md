@@ -401,6 +401,14 @@ ECMAScript 2015 的发布导致转译器的使用大幅度增加，比如 Babel 
 - Array.prototype.includes
 - 一些小的更正（generator 不能与 new 一起用等等）
 
+[babel 中文](https://babeljs.cn/)
+- stage-x: 
+  - Stage 0 - 稻草人: 只是一个想法，可能是 babel 插件。
+  - Stage 1 - 提案: 初步尝试。
+  - Stage 2 - 初稿: 完成初步规范。
+  - Stage 3 - 候选: 完成规范和浏览器初步实现。
+  - Stage 4 - 完成: 将被添加到下一年度发布。
+
 不过，在 2016 年，某些有趣的提案已经达到第四阶段，所以 ECMAScript 的未来是什么呢？
 
 ## 未来与超越：ECMAScipt 2017 及以后
