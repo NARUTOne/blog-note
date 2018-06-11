@@ -24,35 +24,39 @@
 ### form 表单下载 ###
 
  POST的URL下载链接，可以通过设置form表单的action 以及 表单元素值来完成下载。
- 
-	function downLoad () {
-		var form = document.createElement('form');   //定义一个form表单
-		 form.style = 'display:none';   //下面为在form表单中添加查询参数
-		 form.target = '';
-		 form.method = 'post';
-		 form.action = url;//下载接口
-		
-		 var input1 = document.createElement('input'); 
-		 input1.type = 'hidden';
-		 Input1.name = 'exportData';
-		 input1.value = (new Date()).getMilliseconds(); 
-		
-		 document.body.appendChild(form)  //将表单放置在web中
-		 form.appendChild(input1);   //将查询参数控件提交到表单上
-		 form.submit();   //表单提交
-	}
-		
+
+```js
+function downLoad () {
+  var form = document.createElement('form');   //定义一个form表单
+  form.style = 'display:none';   //下面为在form表单中添加查询参数
+  form.target = '';
+  form.method = 'post';
+  form.action = url;//下载接口
+
+  var input1 = document.createElement('input');
+  input1.type = 'hidden';
+  Input1.name = 'exportData';
+  input1.value = (new Date()).getMilliseconds(); 
+
+  document.body.appendChild(form)  //将表单放置在web中
+  form.appendChild(input1);   //将查询参数控件提交到表单上
+  form.submit();   //表单提交
+}
+```
+
 ### iframe ###
 
 iframe有一个src属性，其本质就是发送http请求，GET一个页面或者数据,可以通过一个动态生成的隐藏的iframe来得到下载的二进制文件。
 
-    function download(){
-        var IFrameRequest=document.createElement("iframe");
-        IFrameRequest.id="IFrameRequest";
-        IFrameRequest.src="/test.zip";
-        IFrameRequest.style.display="none";
-        document.body.appendChild(IFrameRequest);
-    }
+```js
+function download(){
+  var IFrameRequest=document.createElement("iframe");
+  IFrameRequest.id="IFrameRequest";
+  IFrameRequest.src="/test.zip";
+  IFrameRequest.style.display="none";
+  document.body.appendChild(IFrameRequest);
+}
+```
 
 ### HTML5のdownload属性 ###
 
@@ -64,15 +68,17 @@ iframe有一个src属性，其本质就是发送http请求，GET一个页面或�
 
 当然，我们还可以动态创建a标签实现下载：
 
-    function download() {
-        var a = document.createElement('a');
-        var url = window.URL.createObjectURL(blob);
-        var filename = 'what-you-want.txt';
-        a.href = url;
-        a.download = filename;
-        a.click();
-        window.URL.revokeObjectURL(url);
-    }
+```js
+function download() {
+  var a = document.createElement('a');
+  var url = window.URL.createObjectURL(blob);
+  var filename = 'what-you-want.txt';
+  a.href = url;
+  a.download = filename;
+  a.click();
+  window.URL.revokeObjectURL(url);
+}
+```
 
 > window.URL 里面有两个方法：
 createObjectURL 用 blob 对象来创建一个 object URL(它是一个 DOMString)，我们可以用这个 object URL 来表示某个 blob 对象，这个 object URL 可以用在 href 和 src 之类的属性上。
@@ -88,54 +94,60 @@ revokeObjectURL 释放由 createObjectURL 创建的 object URL，当该 object U
 ### 其他方式 ###
 >Window.open(url):这种方式在目前的网络环境及安全限制下被拦截已经不太好使了，主要用来是打开新窗口下载。
 
-    var new_window = null;
-	function downLoad () {
-		var isSure=confirm("是否下载")
-	  if (isSure){
-	  	new_window = window.open()
-	  	new_window.location.href = 'https://github.com/WZOnePiece/study-draggable/archive/master.zip';
-	    document.getElementById('result').innerHTML = "You downLoad OK!"
-	  }
-	  else{
-	    document.getElementById('result').innerHTML = "You pressed Cancel!"
-	  }
-	}
-	function closeDownLoad() {
-		new_window  && new_window.close();
-	}
-	
-	//使用a链接target='_blank'，则不会拦截下载
-	function AdownLoad() {
-		var url = 'https://github.com/WZOnePiece/study-draggable/archive/master.zip';
-		var a = document.createElement("a");
-        a.setAttribute("href", url);
-        a.setAttribute("target", "_blank");
-        a.setAttribute("id", "camnpr");
-        document.body.appendChild(a);
-        a.click();
-	}
+```js
+var new_window = null;
+function downLoad () {
+  var isSure=confirm("是否下载")
+  if (isSure){
+    new_window = window.open()
+    new_window.location.href = 'https://github.com/WZOnePiece/study-draggable/archive/master.zip';
+    document.getElementById('result').innerHTML = "You downLoad OK!"
+  }
+  else{
+    document.getElementById('result').innerHTML = "You pressed Cancel!"
+  }
+}
+function closeDownLoad() {
+  new_window  && new_window.close();
+}
+
+//使用a链接target='_blank'，则不会拦截下载
+function AdownLoad() {
+  var url = 'https://github.com/WZOnePiece/study-draggable/archive/master.zip';
+  var a = document.createElement("a");
+  a.setAttribute("href", url);
+  a.setAttribute("target", "_blank");
+  a.setAttribute("id", "camnpr");
+  document.body.appendChild(a);
+  a.click();
+}
+```
 
 这里主要是用window.open 打开窗口，接着使用location.href = url进行重定向避免拦截进行下载。
 
-##补充知识##
+## 补充知识 ##
 
-###Blob 对象###
+### Blob 对象 ###
 
 >Blob 全称是 Binary large object，它表示一个类文件对象，可以用它来表示一个文件。根据 MDN 上面的说法，File API 也是基于 blob 来实现的。
 
 构建 blob 的方式就是通过服务器返回的文件来创建 blob ，采用File API及Fetch API。
 
-    fetch('http://somehost/somefile.zip').then(res => res.blob().then(blob => {
-        var a = document.createElement('a');
-        var url = window.URL.createObjectURL(blob);
-        var filename = 'myfile.zip';
-        a.href = url;
-        a.download = filename;
-        a.click();
-        window.URL.revokeObjectURL(url);
-    }))
+```js
+fetch('http://somehost/somefile.zip').then(res => res.blob().then(blob => {
+  var a = document.createElement('a');
+  var url = window.URL.createObjectURL(blob);
+  var filename = 'myfile.zip';
+  a.href = url;
+  a.download = filename;
+  a.click();
+  window.URL.revokeObjectURL(url);
+}))
+```
+
 >注意：Fetch API 目前浏览器支持不好，详情看[https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch)
 >File API的详细介绍：[https://developer.mozilla.org/zh-CN/docs/Using_files_from_web_applications](https://developer.mozilla.org/zh-CN/docs/Using_files_from_web_applications)
+> 可以利用fetch配合reader对象来实现进度条功能
 
 **限制**
 
@@ -160,6 +172,28 @@ Supported browsers
 2、构建完 blob 对象后才会转换成文件。
 
 文件大点的话，要等到下载完文件之后才能构建 blob 对象，再转化成文件，页面显示上不太友好，没有提示。这时建议采用a标签，防止用户的错误认知造成重复点击下载，资源浪费。
+
+## 服务器出错
+
+- 1、window.open(url)
+
+打开一个带错误信息的页面
+
+- 2、window.location.href
+
+页面将跳转到一个错误页面
+
+- 3、iframe
+
+用户感知不到任何变化
+
+- 4、a标签
+
+直接出现 下载失败
+
+> 当然，如果response header里有content-disposition字段的话，浏览器都会下载一个带错误信息的文件。这时候，其实我们可以多发一个ajax/fetch请求，先检测下接口状态，然后再取做下载逻辑。但这样就对服务器造成了额外的开销。
+
+**这样的体验都不太好，作为一个追求极致体验的程序猿，我们应该重新思考下，如何提升用户体验。**
 
 ##结语##
 >O(∩_∩)O，这篇下载篇就这样简单介绍下，至于还有其他的方式，欢迎留言告知；代码及描述上有bug也希望不吝指出。谢谢哈！
