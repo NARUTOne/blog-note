@@ -2,28 +2,33 @@
 
 > Some blog documents with writing :smile:
 
-## address 
+## address
 
 - **简书BLOG** : [NARUTOne の BLOG](http://www.jianshu.com/u/3bf902a64a29)
 - **知乎**: [NARUTOne の 知乎](https://www.zhihu.com/people/wz-NARUTOne-27-70/activities)
 - **github**: [github](https://github.com/NARUTOne)
 
-## CHANGELOG :rocket:
+## CHANGELOG
+
+:rocket:
 
 > 这是我的私人博客，请不要在此开 issue ，以免污染到别人的时间线；
 > blog 会不定期进行更新添加新内容，欢迎评论交流:smile:
 
-*2017-08-31*
+`2017-08-31`*`
 
 - 统一将blog中的md文件放入 [issue](https://github.com/NARUTOne/blog-note/issues)中，doc中也会放入一份，方便你的下载分享:unamused:
 
-*2017-08-06*
+`*`2017-08-06`
+
 - 将本地blog 记录的md文件 搬迁到github上进行保存
 
 ## 关于博客网站
+
 >参考：https://github.com/eyasliu/blog/issues/2
 
 后续有计划需要搭建个线上博客，时间待定哈:smile:
+
 ## 关于订阅
 
 喜欢请点右上角 `star`，但是 `star` 并不是订阅博客。
@@ -39,7 +44,7 @@
 
 Email: wznarutone326@gmail.com
 
-**爱好**
+### 爱好
 
 - 历史：可以从古侃到今，从外聊到内
 - LOL：常年爬坑，工作后不怎么打了
@@ -55,6 +60,3 @@ Email: wznarutone326@gmail.com
 - 明确署名，不行就给个参考链接，不能再少了:bug:
 
 [LICENSE](https://github.com/NARUTOne/blog-note/blob/master/LICENSE)
-
-
-
