@@ -32,6 +32,7 @@
 ## 辅助、工具
 
 - [jsonml.js](https://github.com/benjycui/jsonml.js) JsonML-related tools.
+- [number-precision](https://github.com/nefe/number-precision) 数值精度计算
 
 ## Mac
 
