@@ -16,6 +16,7 @@
 - [Ant Motion](https://motion.ant.design/index-cn) 能够快速在 React 框架中使用动画。
 我们提供了单项，组合动画，以及整套解决方案
 - [react-keep-alive](https://github.com/StructureBuilder/react-keep-alive) 组件缓存
+- [react-zmage](https://github.com/Caldis/react-zmage) 一个基于 React 的可缩放图片控件
 
 ## 工程化
 
@@ -33,6 +34,7 @@
 
 - [jsonml.js](https://github.com/benjycui/jsonml.js) JsonML-related tools.
 - [number-precision](https://github.com/nefe/number-precision) 数值精度计算
+- [ifvisible.js](https://github.com/serkanyersen/ifvisible.js) 跨浏览器&轻量级方法，检查用户是否正在查看页面或与之交互。
 
 ## Mac
 

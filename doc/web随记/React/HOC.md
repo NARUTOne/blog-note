@@ -1,8 +1,40 @@
 # 高阶组件 HOC
 
-> 高阶组件就是一个接收一个组件并返回另外一个新组件的函数！
+> 高阶组件就是一个函数，且该函数接受一个组件作为参数，并返回一个新的组件。
 
-## 代理高阶
+## 高阶函数模拟
+
+高阶函数就是一个接收一个函数并返回另外一个新的函数！
+
+```js
+function welcome(username) {
+    console.log('welcome ' + username);
+}
+
+function goodbey(username) {
+    console.log('goodbey ' + username);
+}
+
+function wrapWithUsername(wrappedFunc) {
+    let newFunc = () => {
+        let username = localStorage.getItem('username');
+        wrappedFunc(username);
+    };
+    return newFunc;
+}
+
+welcome = wrapWithUsername(welcome);
+goodbey = wrapWithUsername(goodbey);
+
+welcome();
+goodbey();
+```
+
+wrapWithUsername函数就是一个“高阶函数”, 处理了username，传递给目标函数
+
+## 高阶组件——代理
+
+没有副作用的纯函数
 
 - 操作`props`
 - 访问`ref`（不推荐）
@@ -114,7 +146,7 @@ function HOCStyleComponent (WrappedComponent, style) {
 export default HOCStyleComponent;
 ```
 
-## 继承高阶
+## 高阶组件——继承
 
 - 操作生命周期
 - 操作`props`
@@ -141,4 +173,43 @@ const HocComponent = (WrappedComponent) => {
 }
 
 export default HocComponet;
+```
+
+## 示例
+
+有时使用高阶组件，不能获取到真正包装的组件ref, 这时可以采用高阶组件解决这个问题
+
+```js
+/**
+ * @name withRef
+ * @func  getInstance
+ * @description 处理父组件从子组件（包含HOC包裹的）获取ref实例
+ * @example
+ 
+ @withRef  // 注意：这句必须写在最接近`childComponent`的地方
+ */
+
+import React from 'react';
+
+export default (WrappedComponent) => {
+  return class withRef extends React.Component {
+    static displayName = `withRef(${WrappedComponent.displayName || WrappedComponent.name || 'Component'})`;
+    render () {
+      // 这里重新定义一个props的原因是:
+      // 你直接去修改this.props.ref在react开发模式下会报错，不允许你去修改
+      const props = {
+        ...this.props,
+      };
+      // 在这里把getInstance赋值给ref，
+      // 传给`WrappedComponent`，这样就getInstance能获取到`WrappedComponent`实例
+      props.ref = (el)=>{
+        this.props.getInstance && this.props.getInstance(el);
+        this.props.ref && this.props.ref(el);
+      };
+      return (
+        <WrappedComponent {...props} />
+      );
+    }
+  };
+};
 ```
