@@ -14,12 +14,12 @@
 
 ### 1、刀耕火种时代
 
-适合小项目，不分前后端，页面由JSP、PHP等在服务端生成，浏览器负责展现
+适合小项目，不分前后端，页面由JSP、PHP等在服务端生成，浏览器负责展现<br/>
 ![web 1.0](https://raw.githubusercontent.com/NARUTOne/resources-github/master/imgs/web-1.0.png)
 
 ### 2、后端为主的MVC时代
 
-为了降低复杂度，以后端为出发点，有了Web Server层的架构升级，比如Structs、Spring MVC等。
+为了降低复杂度，以后端为出发点，有了Web Server层的架构升级，比如Structs、Spring MVC等。<br/>
 ![web 1.0](https://raw.githubusercontent.com/NARUTOne/resources-github/master/imgs/web-mvc.png)
 
 **前两个阶段存在的问题**：
@@ -29,7 +29,7 @@
 
 ### 3、Ajax 带来的 SPA 时代
 
-2005年Ajax正式提出，前端开发进入SPA（Single Page Application 单页面应用）时代
+2005年Ajax正式提出，前端开发进入SPA（Single Page Application 单页面应用）时代<br/>
 ![web 1.0](https://raw.githubusercontent.com/NARUTOne/resources-github/master/imgs/web-spa.png)
 
 **Ajax时代面临的挑战**：
@@ -41,12 +41,12 @@
 
 > [MVC，MVP 和 MVVM 的图示](http://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html)
 
-为了降低前端开发复杂度，Backbone、EmberJS、KnockoutJS、AngularJS、React、Vue等大量前端框架涌现
+为了降低前端开发复杂度，Backbone、EmberJS、KnockoutJS、AngularJS、React、Vue等大量前端框架涌现<br/>
 ![web 1.0](https://raw.githubusercontent.com/NARUTOne/resources-github/master/imgs/web-mvc.png)
 
 ### 5、Node 带来的全栈时代
 
-随着Node.js的兴起，为前端开发带来一种新的开发模式: 中途岛模式
+随着Node.js的兴起，为前端开发带来一种新的开发模式: 中途岛模式<br/>
 ![web 1.0](https://raw.githubusercontent.com/NARUTOne/resources-github/master/imgs/web-node.png)
 
 **后两个步骤带来的好处**:
