@@ -48,13 +48,13 @@ JS 中的异步操作是通过 WebAPIs 去支持的，常见的有 `XMLHttpReque
 
 >🔥描述：就是主线程运行产生**堆、栈**，执行栈遇到异步任务（浏览器通常是调用 WebAPIs），不会等待，而是继续执行往下执行。而异步任务就会以各种方式，把 callback 加入任务队列中。待当前执行栈执行完毕，也就是出栈完毕，主线程就会从任务队列里读取第一个 callback，执行。同样的生成执行栈，结束后主线程如果发现任务队列中还有 callback，则会继续取出执行，如此重复操作。而这种循环的机制，就称之为**事件循环（Event Loop）**。
 
-![](https://raw.githubusercontent.com/NARUTOne/resources-github/master/imgs/js/Event-Loop.png)
+![Event-Loop](https://raw.githubusercontent.com/NARUTOne/resources-github/master/imgs/js/Event-Loop.png)
 
 ## Event Loop
 
 > 一种确保了这些异步任务的有序执行的机制
 
-- heap（堆）是用户主动请求而划分出来的内存区域，比如你new Object()，就是将一个对象存入堆中，可以理解为heap存对象。 
+- heap（堆）是用户主动请求而划分出来的内存区域，比如你new Object()，就是将一个对象存入堆中，可以理解为heap存对象。
 - stack（栈）是由于函数运行而临时占用的内存区域，函数都存放在栈里。
 
 ```js
@@ -94,6 +94,7 @@ setTimeout(() => {
 
 console.log(4);
 ```
+
 > 结果就不确定了，取决于同步代码的计算时间，所以定时器这个东西还是比较坑的，delay 并不准确，取决于你的 JS 线程是否闲置以及执行效率。
 
 ## 宏任务/微任务
