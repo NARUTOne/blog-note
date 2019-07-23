@@ -24,6 +24,7 @@
 ## 工程化
 
 - [bisheng](https://github.com/benjycui/bisheng) 一款支持React + Markdown 进行文档建站的库
+- [prettier](https://prettier.io/) 代码规范
 
 ## 服务
 
@@ -31,7 +32,11 @@
 
 ## Node
 
+- [七天学会NodeJS](https://www.kancloud.cn/kancloud/seven-days-nodejs/43580)
+
 ## 图形学
+
+- [GGEditor](http://ggeditor.com/) A visual graph editor based on G6 and React
 
 ## 辅助、工具
 
@@ -40,5 +45,7 @@
 - [ifvisible.js](https://github.com/serkanyersen/ifvisible.js) 跨浏览器&轻量级方法，检查用户是否正在查看页面或与之交互。
 
 ## Mac
+
+- [iTerm2](https://www.iterm2.com/) Mac OS 终端利器
 
 ## 其他
