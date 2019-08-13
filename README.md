@@ -4,7 +4,7 @@
 
 ## address
 
-- **简书BLOG** : [NARUTOne の BLOG](http://www.jianshu.com/u/3bf902a64a29)
+- **简书** : [NARUTOne の BLOG](http://www.jianshu.com/u/3bf902a64a29)
 - **知乎**: [NARUTOne の 知乎](https://www.zhihu.com/people/wz-NARUTOne-27-70/activities)
 - **github**: [github](https://github.com/NARUTOne)
 
@@ -25,8 +25,6 @@
 
 ## 关于博客网站
 
->参考：https://github.com/eyasliu/blog/issues/2
-
 后续有计划需要搭建个线上博客，时间待定哈:smile:
 
 ## 关于订阅
@@ -42,7 +40,7 @@
 > 2016年毕业的前端小白，迷路的缘，火舞的叶 follow your heart！
 > 网名昵称：NARUTOne (你懂吗:grin:) 、 迷（の）缘火（の）叶
 
-Email: wznarutone326@gmail.com
+Email: wznaruto326@163.com
 
 ### 爱好
 
