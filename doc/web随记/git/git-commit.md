@@ -202,3 +202,5 @@ package.json 配置:
     "release": "standard-version"
 }
 ```
+
+> 这时候你就可以用git cz 代替git commit，当然如果习惯了 commit message 规范后，可以直接用git commit，如果 message 不符合规范，是不会 commit 的。
