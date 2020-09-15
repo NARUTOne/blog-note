@@ -129,6 +129,12 @@ class SampleComponent extends React.Component {
 
 ### 包装组件
 
+> 自定义渲染
+
+- 丰富渲染
+- 条件渲染
+- 组合渲染
+
 ```js
 import React from 'react';
 
@@ -148,8 +154,35 @@ export default HOCStyleComponent;
 
 ## 高阶组件——继承
 
+- 渲染劫持
 - 操作生命周期
 - 操作`props`
+- 调用组件的静态方法
+
+### 渲染劫持
+
+```js
+function MyHOC (WrapComponent) {
+  return class extends WrapComponent {
+    componentDidMount () {
+      setTimeout(() => {
+        console.log(this.props)
+      }, 2000)
+    }
+    render () {
+      let testRender = super.render();
+      let newProps = { value: 'daimei' }
+      let finalProps = Object.assign({}, testRender.props, newProps);
+      let finalRender = React.cloneElement(
+        testRender,
+        finalProps,
+        testRender.props.children
+      );
+      return finalRender
+    }
+  }
+}
+```
 
 ### 操作生命周期
 
@@ -159,7 +192,16 @@ export default HOCStyleComponent;
 import React from 'react';
 
 const HocComponent = (WrappedComponent) => {
+  console.log(WrappedComponent.prototype.componentDidMount)
+  console.log(WrappedComponent.prototype.render)
+  const wrappedDidMount = WrappedComponent.prototype.componentDidMount;
   class MyContainer extends WrappedComponent {
+    componentDidMount () {
+      console.log('MyHoc componentDidMount')
+      if (wrappedDidMount) {
+        wrappedDidMount.apply(this) // 再调用一次
+      }
+    }
     render () {
       const eleTree = super.render();
       const newProps = Object.assign({}, eleTree.props);
@@ -185,7 +227,7 @@ export default HocComponet;
  * @func  getInstance
  * @description 处理父组件从子组件（包含HOC包裹的）获取ref实例
  * @example
- 
+
  @withRef  // 注意：这句必须写在最接近`childComponent`的地方
  */
 
