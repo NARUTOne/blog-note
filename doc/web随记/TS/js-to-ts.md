@@ -5,6 +5,7 @@
 参考:
 
 - [TS官网-JavaScript迁移](https://www.tslang.cn/docs/handbook/migrating-from-javascript.html)
+- [TypeScript、Rollup 搭建工具库](https://juejin.im/post/6844904035309322254)
 
 ## 基本调整
 
